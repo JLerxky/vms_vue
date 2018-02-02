@@ -1,10 +1,11 @@
 <template>
-  <el-row :gutter="20">
-    <el-input
-      placeholder="输入关键字进行过滤"
-      v-model="filterText">
-    </el-input>
-
+  <el-card class="box-card">
+    <div slot="header" class="clearfix">
+      <el-input
+        placeholder="输入关键字进行过滤"
+        v-model="filterText">
+      </el-input>
+    </div>
     <el-tree
       class="filter-tree"
       :data="data2"
@@ -13,7 +14,7 @@
       :filter-node-method="filterNode"
       ref="tree2">
     </el-tree>
-  </el-row>
+  </el-card>
 </template>
 
 <script>
@@ -39,7 +40,7 @@
           label: '一级 1',
           children: [{
             id: 4,
-            label: '二级 1-1',
+            label: '二级 1-1-1-1-1-1-1-1-1-1-1-1-1-11-1-1-1-1-1-1-1-1-1-1-1-1-1',
             children: [{
               id: 9,
               label: '三级 1-1-1'
@@ -77,3 +78,30 @@
     }
   };
 </script>
+
+<style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .el-tree-node>.el-tree-node__children {
+    overflow: unset;
+  }
+
+  .el-tree {
+    overflow: auto;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+</style>
