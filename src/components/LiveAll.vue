@@ -1,15 +1,17 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="4"><div class="grid-content bg-purple"><CameraTree></CameraTree></div></el-col>
-    <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
-    <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+    <el-col :span="16"><div class="grid-content bg-purple"><LivePlay></LivePlay></div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple"><PTZ></PTZ></div></el-col>
   </el-row>
 </template>
 
 <script>
   import CameraTree from './CameraTree.vue'
+  import PTZ from './PTZ.vue'
+  import LivePlay from './LivePlay.vue'
   export default {
-    components: { CameraTree }
+    components: { CameraTree, PTZ, LivePlay }
   }
 </script>
 

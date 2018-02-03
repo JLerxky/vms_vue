@@ -7,10 +7,10 @@
       </el-input>
     </div>
     <el-tree
+      id="camera_tree"
       class="filter-tree"
       :data="data2"
       :props="defaultProps"
-      default-expand-all
       :filter-node-method="filterNode"
       ref="tree2">
     </el-tree>
@@ -37,7 +37,7 @@
         filterText: '',
         data2: [{
           id: 1,
-          label: '一级 1',
+          label: '宁波',
           children: [{
             id: 4,
             label: '二级 1-1-1-1-1-1-1-1-1-1-1-1-1-11-1-1-1-1-1-1-1-1-1-1-1-1-1',
@@ -51,7 +51,7 @@
           }]
         }, {
           id: 2,
-          label: '一级 2',
+          label: '金华',
           children: [{
             id: 5,
             label: '二级 2-1'
@@ -61,7 +61,7 @@
           }]
         }, {
           id: 3,
-          label: '一级 3',
+          label: '杭州',
           children: [{
             id: 7,
             label: '二级 3-1'
@@ -84,16 +84,16 @@
     font-size: 14px;
   }
 
-  .item {
-    margin-bottom: 18px;
-  }
-
   .el-tree-node>.el-tree-node__children {
     overflow: unset;
   }
 
   .el-tree {
     overflow: auto;
+  }
+
+  div#camera_tree {
+    min-height: 443px;
   }
 
   .clearfix:before,

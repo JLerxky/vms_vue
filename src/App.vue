@@ -7,7 +7,7 @@
       <el-main>
         <LiveAll></LiveAll>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer height="40px">@JLer</el-footer>
     </el-container>
   </div>
 </template>
@@ -40,7 +40,7 @@
     background-color: #ffffff;
     color: #333;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
   }
 
   .el-aside {
@@ -58,7 +58,7 @@
   }
 
   .el-col-4 {
-    min-width: 214px;
+    min-width: 250px;
   }
 
   body > .el-container {
@@ -66,10 +66,14 @@
   }
 
   footer.el-footer {
-    height: 60px;
+    height: 40px;
     position: absolute;
     bottom: 0;
     width: 100%;
+  }
+
+  .el-card__header {
+    padding: 8px 10px;
   }
 
   .el-container:nth-child(5) .el-aside,
