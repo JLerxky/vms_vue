@@ -12,7 +12,8 @@
       :data="data2"
       :props="defaultProps"
       :filter-node-method="filterNode"
-      ref="tree2">
+      ref="tree2"
+      :render-content="renderContent">
     </el-tree>
   </el-card>
 </template>
@@ -29,6 +30,25 @@
       filterNode(value, data) {
         if (!value) return true;
         return data.label.indexOf(value) !== -1;
+      },
+
+      renderContent(h, { node, data, store } ) {
+        if (node.isLeaf) return (
+          <span class="el-tree-node__label">
+            <span>
+              <el-button size="small" type="text" on-click={ () => this.play() }>{node.label}</el-button>
+            </span>
+          </span>);
+        else return (
+          <span class="el-tree-node__label">
+            <span>
+              <span>{node.label}</span>
+            </span>
+          </span>);
+      },
+
+      play(){
+        alert('ok');
       }
     },
 
