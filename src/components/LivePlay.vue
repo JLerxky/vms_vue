@@ -5,7 +5,9 @@
       <el-tooltip class="item" effect="dark" content="关闭全部" placement="top">
         <el-button
           style="float: right; padding: 3px 0; margin: 0;"
-          type="text" icon="el-icon-close"></el-button>
+          type="text"
+          icon="el-icon-close"
+          @click="ptz(0)"></el-button>
       </el-tooltip>
     </div>
     <div id="playOCX">
@@ -19,6 +21,11 @@
       return {
         title: '实时画面'
       };
+    },
+    methods: {
+      ptz(command) {
+        alert('ok'+command);
+      }
     }
   }
 </script>
@@ -29,9 +36,9 @@
   }
 
   div#playOCX {
-    min-height: 500px;
+    min-height: 561px;
     background-color: dimgrey;
-    margin: -20px;
+    margin: -20px 0;
   }
 
   .clearfix:before,

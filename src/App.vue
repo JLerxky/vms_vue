@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-container style="height: 100%;">
       <el-header>
         <NavMenu></NavMenu>
       </el-header>
-      <el-main>
+      <el-main style="height: 100%; margin-bottom: 40px;">
         <LiveAll></LiveAll>
       </el-main>
       <el-footer height="40px">@JLer</el-footer>
@@ -21,17 +21,21 @@
 </script>
 
 <style>
+  html{
+    height: 100%;
+  }
+  #app{
+    height: 100%;
+  }
   body{
     margin: 0;
     background-color: #E9EEF3;
+    min-width: 700px;
+    height: 100%;
   }
-  #app {
-    /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-    /*-webkit-font-smoothing: antialiased;*/
-    /*-moz-osx-font-smoothing: grayscale;*/
-    /*text-align: center;*/
-    /*color: #2c3e50;*/
-    /*margin-top: 60px;*/
+  .el-card {
+    height: 100%;
+    overflow: auto;
   }
   a {
     text-decoration: none;
@@ -57,10 +61,6 @@
     /*line-height: 160px;*/
   }
 
-  .el-col-4 {
-    min-width: 250px;
-  }
-
   body > .el-container {
     margin-bottom: 40px;
   }
@@ -74,6 +74,10 @@
 
   .el-card__header {
     padding: 8px 10px;
+  }
+
+  .el-card__body {
+    padding: 20px 0;
   }
 
   .el-container:nth-child(5) .el-aside,

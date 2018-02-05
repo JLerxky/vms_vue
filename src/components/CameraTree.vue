@@ -109,7 +109,7 @@
   }
 
   .el-tree {
-    overflow: auto;
+    overflow: inherit;
   }
 
   div#camera_tree {
