@@ -8,8 +8,8 @@ import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI, VueAxios, axios)
-
+Vue.use(ElementUI, VueAxios)
+Vue.prototype.$axios = axios;
 new Vue({
   el: '#app',
   render: h => h(App),

@@ -7,13 +7,6 @@
     <el-button id="user" type="text" icon="el-icon-menu">
       {{userName}}
     </el-button>
-    <!--<el-submenu index="2">-->
-      <!--<template slot="title">我的工作台</template>-->
-      <!--<el-menu-item index="2-1">选项1</el-menu-item>-->
-      <!--<el-menu-item index="2-2">选项2</el-menu-item>-->
-      <!--<el-menu-item index="2-3">选项3</el-menu-item>-->
-    <!--</el-submenu>-->
-    <!--<el-menu-item index="3"><a href="#" target="_blank">订单管理</a></el-menu-item>-->
   </el-menu>
 </template>
 
@@ -23,16 +16,21 @@
       return {
         activeIndex: '1',
         activeIndex2: '1',
-        projectName: '浙江省水利监控',
-        userName: '用户'
+        projectName: '',
+        userName: this.$route.query.u
       };
     },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       }
+    },
+    mounted: function() {
+      this.$axios.post('http://localhost:8021/vms_ms/live/cameraTree')
+        .then(response => {this.projectName = response.data});
     }
   }
+
 </script>
 
 <style>
