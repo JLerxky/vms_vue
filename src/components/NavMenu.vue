@@ -26,7 +26,9 @@
       }
     },
     mounted: function() {
-      this.$axios.post('http://localhost:8021/vms_ms/live/cameraTree')
+      this.$axios.post('/api/live/cameraTree',{
+        tid:this.$route.query.tid
+      })
         .then(response => {this.projectName = response.data});
     }
   }
