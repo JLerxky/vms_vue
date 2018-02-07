@@ -26,7 +26,7 @@
       }
     },
     mounted: function() {
-      this.$axios.post('/api/live/cameraTree',{
+      this.$axios.post('/api/live/projectName',{
         tid:this.$route.query.tid
       })
         .then(response => {this.projectName = response.data});
